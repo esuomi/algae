@@ -26,6 +26,6 @@ public enum Checksums implements Checksum {
 
     @Override
     public int calculate(String input) {
-        return this.checksum.calculate(input)cd ;
+        return this.checksum.calculate(input);
     }
 }
