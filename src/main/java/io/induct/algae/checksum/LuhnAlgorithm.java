@@ -10,7 +10,9 @@ import com.google.common.base.Preconditions;
  * @since 2014-10-18
  * @see <a href="http://en.wikipedia.org/wiki/Luhn_algorithm">Luhn algorithm</a>
  */
-public class LuhnAlgorithm implements Checksum {
+public final class LuhnAlgorithm implements Checksum {
+
+    LuhnAlgorithm() {}
 
     // TODO: Some enum thingy for describind security? Like LuhnAlgorithm.Validity.isCryptographicallySecure()
 

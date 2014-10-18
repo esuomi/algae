@@ -7,7 +7,9 @@ import com.google.common.base.Preconditions;
  * @author EskoSuomi
  * @since 2014-10-18
  */
-public class VerhoeffAlgorithm implements Checksum {
+public final class VerhoeffAlgorithm implements Checksum {
+
+    public VerhoeffAlgorithm() {}
 
     public static final int[][] MULTIPLICATION = {
         { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 },
