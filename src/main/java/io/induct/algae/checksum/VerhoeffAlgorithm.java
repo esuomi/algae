@@ -4,12 +4,15 @@ import com.google.common.base.CharMatcher;
 import com.google.common.base.Preconditions;
 
 /**
+ * Checksum validator using Verhoeff algorithm.
+ *
  * @author EskoSuomi
  * @since 2014-10-18
+ * @see <a href="http://en.wikipedia.org/wiki/Verhoeff_algorithm">Verhoeff algorithm</a>
  */
-public final class VerhoeffAlgorithm implements Checksum {
+public enum VerhoeffAlgorithm implements Checksum {
 
-    public VerhoeffAlgorithm() {}
+    INSTANCE;
 
     public static final int[][] MULTIPLICATION = {
         { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 },
@@ -52,7 +55,6 @@ public final class VerhoeffAlgorithm implements Checksum {
             int idx = length - i;
             int n = Integer.parseInt(digitsStr.substring(i, i + 1));
             checksum = MULTIPLICATION[checksum][PERMUTATION[idx % 8][n]];
-            System.out.println(idx + " => " + n + " => " + checksum);
         }
         return INVERSE[checksum];
     }

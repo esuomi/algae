@@ -1,6 +1,5 @@
 package io.induct.algae.checksum;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -14,13 +13,7 @@ import static org.junit.Assert.assertThat;
  */
 public class LuhnAlgorithmTests {
 
-    private LuhnAlgorithm luhn;
-
-    @Before
-    public void setUp() throws Exception {
-        luhn = new LuhnAlgorithm();
-
-    }
+    private LuhnAlgorithm luhn = LuhnAlgorithm.INSTANCE;
 
     @Test
     public void basicWikipediaCase() throws Exception {
