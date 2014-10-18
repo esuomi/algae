@@ -1,4 +1,4 @@
-package io.induct.algae;
+package io.induct.algae.checksum;
 
 /**
  * @author EskoSuomi

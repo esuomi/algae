@@ -1,6 +1,9 @@
-package io.induct.algae.checksum;
+package io.induct.algae;
 
-import io.induct.algae.Checksum;
+import io.induct.algae.checksum.Checksum;
+import io.induct.algae.checksum.DammAlgorithm;
+import io.induct.algae.checksum.LuhnAlgorithm;
+import io.induct.algae.checksum.VerhoeffAlgorithm;
 
 /**
  * Enumeration of various not-so-common checksum algorithms.

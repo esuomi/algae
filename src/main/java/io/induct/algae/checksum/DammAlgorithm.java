@@ -2,7 +2,6 @@ package io.induct.algae.checksum;
 
 import com.google.common.base.CharMatcher;
 import com.google.common.base.Preconditions;
-import io.induct.algae.Checksum;
 
 /**
  * Checksum validator using Damm algorithm.
