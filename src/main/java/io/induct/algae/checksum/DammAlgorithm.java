@@ -9,9 +9,9 @@ import com.google.common.base.Preconditions;
  * @since 2014-10-18
  * @see <a href="http://en.wikipedia.org/wiki/Damm_algorithm">Damm algorithm</a>
  */
-public final class DammAlgorithm implements Checksum {
+public enum DammAlgorithm implements Checksum {
 
-    DammAlgorithm() {}
+    INSTANCE;
 
     private final int[][] QUASI_GROUP = {
             {0, 3, 1, 7, 5, 9, 8, 6, 4, 2},
