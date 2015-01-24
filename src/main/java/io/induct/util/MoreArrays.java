@@ -51,4 +51,36 @@ public class MoreArrays {
             arr[i] = supplier.get();
         }
     }
+
+    /**
+     * Rotate values of given array. Positive offset rotates to right, negatives to left
+     *
+     * @param offset Rotation offset
+     * @param arr Array to shift
+     * @return Rotated array
+     */
+    public static byte[] shift(int offset, byte[] arr) {
+        if (offset == 0) return Arrays.copyOf(arr, arr.length);
+
+        byte[] rotated = new byte[arr.length];
+
+        boolean rotateRight = offset > 0;
+
+        offset = Math.abs(offset);
+        offset = arr.length % offset;
+
+        int cut, remainder;
+        if (rotateRight) {
+            cut = arr.length - offset - 1;
+            remainder = offset + 1;
+        } else {
+            cut = offset + 1;
+            remainder = arr.length - offset - 1;
+        }
+
+        System.arraycopy(arr, 0, rotated, remainder, cut);
+        System.arraycopy(arr, cut, rotated, 0, remainder);
+
+        return rotated;
+    }
 }
