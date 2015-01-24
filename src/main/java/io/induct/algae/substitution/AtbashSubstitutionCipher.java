@@ -9,7 +9,7 @@ import java.util.Arrays;
  * @since 24.1.2015
  * @see <a href="http://en.wikipedia.org/wiki/Atbash">Atbash cipher</a>
  */
-public class AtbashSubstitutionCipher {
+public class AtbashSubstitutionCipher extends AbstractSubstitutionCipher implements SubstitutionCipher {
 
     private final static byte UNKNOWN_BYTE = -1;
 
@@ -28,17 +28,10 @@ public class AtbashSubstitutionCipher {
         }
     }
 
-    public byte[] substitute(byte[] bytes) {
-        Preconditions.checkNotNull(bytes, "Cannot substitute contents of null array");
-
-        byte[] substituted = new byte[bytes.length];
-        for (int i = 0; i < bytes.length; i++) {
-            byte b = bytes[i];
-            byte sb = substitutions[b];
-            Preconditions.checkArgument(sb >= 0, "No known substitution for byte " + b);
-            substituted[i] = sb;
-        }
-
-        return substituted;
+    @Override
+    protected byte lookup(byte b) {
+        byte sb = substitutions[b];
+        Preconditions.checkArgument(sb >= 0, "No known substitution for byte " + b);
+        return sb;
     }
 }
