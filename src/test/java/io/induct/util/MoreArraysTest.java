@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
+import static io.induct.util.MoreArrays.shift;
 import static org.junit.Assert.*;
 
 public class MoreArraysTest {
@@ -21,5 +22,15 @@ public class MoreArraysTest {
                         new byte[] { 'c', 'f' }
                 })
         );
+    }
+
+    @Test
+    public void shiftsByteArrayCorrectly() throws Exception {
+        assertShift(2, "abcde", "deabc");
+        assertShift(-2, "abcde", "cdeab");
+    }
+
+    private void assertShift(int offset, String input, String expected) {
+        assertEquals(expected, new String(shift(offset, input.getBytes())));
     }
 }
